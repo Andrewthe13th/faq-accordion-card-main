@@ -1,0 +1,137 @@
+.attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+/* Defaults */
+*,*:before,*:after{box-sizing:border-box;}
+html{ font-family: 'Kumbh Sans', sans-serif; font-size: 12px; }
+body,main,h1,h2,h3,h4,h5,h6,p,ul,ol,li,div{margin: 0;}
+
+:root{
+  --clr-font-primary-very_dark_desaturated_blue: hsl(238, 29%, 16%);
+  --clr-font-primary-soft_red: hsl(14, 88%, 65%);
+  --clr-font-neutral-very_dark_grayish_blue:hsl(237, 12%, 33%); 
+  --clr-font-neutral-dark_grayish_blue:hsl(240, 6%, 50%); 
+  --clr-bg_gradient-soft_violet: hsl(273, 75%, 66%);
+  --clr-bg_gradient-soft_blue: hsl(240, 73%, 65%);
+  --clr-dividers-light_grayish_blue: hsl(240, 5%, 91%);
+  --fw-bold: 700;
+  --fw-regular: 400;
+}
+
+/* My styles */
+body{
+  background-image: linear-gradient(var(--clr-bg_gradient-soft_violet),var(--clr-bg_gradient-soft_blue));
+  height: 100vh;
+}
+
+main{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container{
+  width: 100%;
+  padding: 1.5em;
+  margin: 12em auto;
+}
+
+.card{
+  background-color: white;
+  border-radius: 1em;
+  padding: 3.5em 2.5em;
+  max-width: 60em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .img{
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin-bottom: 7em;
+}
+
+.card .img > img{
+  position: absolute;
+  min-width: 220px;
+  max-width: 260px;
+  transform: translateY(-4.8em);
+  filter: drop-shadow(0px 2.3rem 2px hsla(240, 73%, 65%,0.2));
+}
+
+.card h1{
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 0.3em;
+}
+
+.accordion{
+  padding: 1.2em 0em;
+  border-bottom: solid var(--clr-dividers-light_grayish_blue) 1px;
+  color: var(--clr-font-neutral-very_dark_grayish_blue);
+}
+
+.accordion .answer{
+  display: none;
+  width: 90%;
+  font-size: 0.9rem;
+  color: var(--clr-font-neutral-dark_grayish_blue);
+}
+
+.accordion.selected .question{
+  font-weight: var(--fw-bold);
+}
+
+.accordion.selected .answer{
+  display: block;
+  margin-top: 1em;
+}
+
+.accordion:hover{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion:hover .question > p{
+  color: orange;
+}
+
+.question{
+  display: flex;
+  width: 100%;
+}
+
+.question .arrow-down{
+  margin-left: auto;
+}
+
+@media (min-width: 700px){
+  .card{
+    flex-direction: row;
+    padding: 4em 5em;
+    gap: 1em;
+  }
+  .content{
+    margin-left: auto;
+  }
+  .card .img{
+    margin-bottom: 0em;
+  }
+  
+  .card .img > img{
+    width: 30em;
+    max-width: none;
+    transform: translateX(5rem);
+    filter: drop-shadow(0px 6rem 0px hsla(240, 73%, 65%,0.2));
+  }
+  
+  .card h1{
+    text-align: left;
+  }
+
+  .accordion-container{
+    width: 25em;
+  }
+}
